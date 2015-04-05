@@ -15,9 +15,9 @@ import java.io.IOException;
 public class HttpActivity{
 
     private final OkHttpClient client = new OkHttpClient();
-    public void run() throws Exception {
+    public void run(String onOrOff) throws Exception {
         Request request = new Request.Builder()
-                .url("http://192.168.2.17:7655/SprinklersOn")
+                .url("http://192.168.2.17:7655/Sprinklers"+onOrOff)
                 .build();
 
         client.newCall(request).enqueue(new Callback() {

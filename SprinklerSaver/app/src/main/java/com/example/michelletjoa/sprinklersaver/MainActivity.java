@@ -40,13 +40,14 @@ public class MainActivity extends ActionBarActivity implements CompoundButton.On
         TextView txtConnect = new TextView(this);
         txtConnect = (TextView) findViewById(R.id.txtConnected);
         try {
-            httpActivity.run();
+            httpActivity.run("Off");
             txtConnect.setText("Connected");
         }
         catch (IOException e) {
             txtConnect.setText("Can Not Connect");
             e.printStackTrace();
         } catch (Exception e) {
+            txtConnect.setText("Can Not Connect");
             e.printStackTrace();
         }
     }
@@ -103,10 +104,9 @@ public class MainActivity extends ActionBarActivity implements CompoundButton.On
     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
         //for when the USER slides the switcher
         changeTextStat(isChecked);
-        System.out.print(isChecked);
         HttpActivity httpActivity = new HttpActivity();
         try {
-            httpActivity.run();
+            httpActivity.run(isChecked ? "On" : "Off");
         } catch (Exception e) {
             e.printStackTrace();
         }
