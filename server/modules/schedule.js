@@ -8,7 +8,7 @@ var Util = require("./utils.js");
 // };
 
 module.exports = {
-	daysToWater: [6],
+	daysToWater: [0],
 	timeToWater: Util.TimeToMins(Util.date.getHours(), Util.date.getMinutes() + 0.3),
 	durationOfWater: Util.MinsToMillis(0.3),
 	LCDtimeout: Util.MinsToMillis(0.08)

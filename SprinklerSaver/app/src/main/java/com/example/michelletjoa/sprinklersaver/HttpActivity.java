@@ -32,9 +32,6 @@ public class HttpActivity{
                 Headers responseHeaders = response.headers();
                 String respond = response.message();
                 System.out.print(respond);
-                //responses = true;
-
-                //System.out.println(response.body().string());
             }
         });
     }

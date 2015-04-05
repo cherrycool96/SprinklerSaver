@@ -21,8 +21,7 @@ function init () {
 		LCDcontroller.dim();
 	}, schedule.LCDtimeout);
 
-	console.log(calculateTimeToNextWater());
-	setTimeout(startWater, 10000);
+	setTimeout(startWater, calculateTimeToNextWater());
 	systemLoop = setInterval(function () {
 		if (buttonController.btnStopWatering()) {
 			stopWater();
