@@ -15,10 +15,9 @@ import java.io.IOException;
 public class HttpActivity{
 
     private final OkHttpClient client = new OkHttpClient();
-
     public void run() throws Exception {
         Request request = new Request.Builder()
-                .url("http://publicobject.com/helloworld.txt")
+                .url("http://192.168.2.17:7655/SprinklersOn")
                 .build();
 
         client.newCall(request).enqueue(new Callback() {
@@ -31,11 +30,11 @@ public class HttpActivity{
                 if (!response.isSuccessful()) throw new IOException("Unexpected code " + response);
 
                 Headers responseHeaders = response.headers();
-                for (int i = 0; i < responseHeaders.size(); i++) {
-                    System.out.println(responseHeaders.name(i) + ": " + responseHeaders.value(i));
-                }
+                String respond = response.message();
+                System.out.print(respond);
+                //responses = true;
 
-                System.out.println(response.body().string());
+                //System.out.println(response.body().string());
             }
         });
     }

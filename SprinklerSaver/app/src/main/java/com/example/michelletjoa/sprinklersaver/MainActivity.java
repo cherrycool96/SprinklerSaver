@@ -103,5 +103,12 @@ public class MainActivity extends ActionBarActivity implements CompoundButton.On
     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
         //for when the USER slides the switcher
         changeTextStat(isChecked);
+        System.out.print(isChecked);
+        HttpActivity httpActivity = new HttpActivity();
+        try {
+            httpActivity.run();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
