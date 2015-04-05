@@ -37,6 +37,18 @@ public class MainActivity extends ActionBarActivity implements CompoundButton.On
         Switch switcher = (Switch) findViewById(R.id.switchOnOff);
         switcher.setOnCheckedChangeListener(this);
         HttpActivity httpActivity = new HttpActivity();
+        TextView txtConnect = new TextView(this);
+        txtConnect = (TextView) findViewById(R.id.txtConnected);
+        try {
+            httpActivity.run();
+            txtConnect.setText("Connected");
+        }
+        catch (IOException e) {
+            txtConnect.setText("Can Not Connect");
+            e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 

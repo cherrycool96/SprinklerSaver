@@ -2,6 +2,8 @@ package com.example.michelletjoa.sprinklersaver;
 
 import android.os.AsyncTask;
 
+import com.squareup.okhttp.Callback;
+import com.squareup.okhttp.Headers;
 import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
 import com.squareup.okhttp.Response;
@@ -12,22 +14,29 @@ import java.io.IOException;
  */
 public class HttpActivity{
 
-    OkHttpClient client = new OkHttpClient();
+    private final OkHttpClient client = new OkHttpClient();
 
-    String run(String url) throws IOException {
+    public void run() throws Exception {
         Request request = new Request.Builder()
-                .url(url)
+                .url("http://publicobject.com/helloworld.txt")
                 .build();
 
-        Response response = client.newCall(request).execute();
-        return response.body().string();
+        client.newCall(request).enqueue(new Callback() {
+            @Override
+            public void onFailure(Request request, IOException e) {
+                e.printStackTrace();
+            }
+
+            @Override public void onResponse(Response response) throws IOException {
+                if (!response.isSuccessful()) throw new IOException("Unexpected code " + response);
+
+                Headers responseHeaders = response.headers();
+                for (int i = 0; i < responseHeaders.size(); i++) {
+                    System.out.println(responseHeaders.name(i) + ": " + responseHeaders.value(i));
+                }
+
+                System.out.println(response.body().string());
+            }
+        });
     }
-
-    public static void main(String[] args) throws IOException {
-        HttpActivity example = new HttpActivity();
-        String response = example.run("https://raw.github.com/square/okhttp/master/README.md");
-        System.out.println(response);
-    }
-
-
 }

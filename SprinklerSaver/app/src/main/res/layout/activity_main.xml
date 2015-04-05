@@ -27,4 +27,15 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="70dp" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Is it Connected?"
+        android:id="@+id/txtConnected"
+        android:layout_below="@+id/switchOnOff"
+        android:layout_alignRight="@+id/txtSprinklerStat"
+        android:layout_alignEnd="@+id/txtSprinklerStat"
+        android:layout_marginTop="70dp" />
+
 </RelativeLayout>
