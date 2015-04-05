@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/info"
+        android:background="?attr/colorPrimary"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_horizontal|bottom"
+        android:layout_alignParentLeft="false"
+        android:layout_alignParentRight="false"
+        android:paddingBottom="20dp"
+        android:paddingTop="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Sprinkler On/Off"
+            android:id="@+id/txtSprinklerStat"
+            android:textSize="30dp"
+            android:textColor="#ffffff"
+            android:layout_above="@+id/switchOnOff"
+            android:layout_alignLeft="@+id/textView"
+            android:layout_alignStart="@+id/textView" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Is it Connected?"
+            android:id="@+id/txtConnected"
+            android:textSize="40dp"
+            android:textColor="#ffffff"
+            android:layout_above="@+id/txtSprinklerStat"
+            android:layout_centerHorizontal="true" />
+
+        <Switch
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Turn On/Off Sprinkler"
+            android:id="@+id/switchOnOff"
+            android:checked="false"
+            android:clickable="true"
+            android:enabled="true"
+            android:onClick="onToggleClicked"
+            android:textSize="20dp"
+            android:textColor="#ffffff"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true" />
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/icon"
+        android:src="@mipmap/ic_launcher"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/info"
+        android:layout_alignParentTop="true"/>
+
+</RelativeLayout>

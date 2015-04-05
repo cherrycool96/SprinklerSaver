@@ -1,8 +1,17 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="MaterialDrawerTheme.Light.TranslucentStatus">
         <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/material_drawer_primary</item>
+        <item name="colorAccent">@color/material_drawer_accent</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+
+        <item name="toolbarStyle">@style/Widget.AppCompat.Toolbar</item>
+    </style>
+
+    <style name="Widget.MyApp.ActionBar" parent="AppTheme">
+        <item name="android:background">@color/material_drawer_primary</item>
     </style>
 
 </resources>
