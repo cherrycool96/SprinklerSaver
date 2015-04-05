@@ -6,5 +6,5 @@ module.exports = {
 
 var m = require('mraa'); //require mraa
 
-var btnStopWatering = new m.Gpio(2); //setup digital read on pin 6
+var btnStopWatering = new m.Gpio(5); //setup digital read on pin 6
 btnStopWatering.dir(m.DIR_IN); //set the gpio direction to input

@@ -19,7 +19,8 @@ var server = require('http').Server(app);
 
 app.get("/SprinklersOn", function (req, res) {
 	console.log("turning on");
-	// startWatering();
+	// TODO: comment the next line
+	startWatering();
 	forceWatering = true;
 	res.send("Turning on");
 });

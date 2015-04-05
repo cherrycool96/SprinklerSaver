@@ -45,24 +45,26 @@ function calculateTimeToNextWater () {
 
 function startWater () {
 	if (!sprinklers.getState()) {
-		if (logic.decideToWater(API.forceWatering, weather.requiresWatering(), weather.climatePermitsWatering())) {
-			API.forceWatering = false;
-			sprinklers.setState(true);
-			setTimeout(function () {
-				stopWater();
-			}, schedule.durationOfWater);
-		}
+		weather.requiresWatering(function (weatherWater) {
+			if (logic.decideToWater(API.forceWatering, weatherWater, weather.climatePermitsWatering())) {
+				API.forceWatering = false;
+				sprinklers.setState(true);
+				setTimeout(function () {
+					stopWater();
+				}, schedule.durationOfWater);
 
-		LCDcontroller.setText("  ~ Watering ~  ");
-		// LCDcontroller.setText("================", {x:0, y:1});
-		LCDcontroller.setColor(0, 0, 255);
-		LCDcontroller.brighten();
-		// dim the screen after a few seconds
-		setTimeout(function () {
-			LCDcontroller.dim();
-		}, schedule.LCDtimeout);
+				LCDcontroller.setText("  ~ Watering ~  ");
+				// LCDcontroller.setText("================", {x:0, y:1});
+				LCDcontroller.setColor(0, 100, 255);
+				LCDcontroller.brighten();
+				// dim the screen after a few seconds
+				setTimeout(function () {
+					LCDcontroller.dim();
+				}, schedule.LCDtimeout);
 
-		setTimeout(startWater, calculateTimeToNextWater());
+				setTimeout(startWater, calculateTimeToNextWater());
+			}
+		});
 	}
 }
 

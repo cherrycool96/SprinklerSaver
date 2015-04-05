@@ -15,7 +15,7 @@ module.exports = {
 };
 
 var m = require('mraa');
-var sprinklers = new m.Gpio(3); //setup digital read on pin 5
+var sprinklers = new m.Gpio(8); //setup digital read on pin 5
 sprinklers.dir(m.DIR_OUT); //set the gpio direction to output
 sprinklers.write(0); //set the digital pin to high (1)
 
