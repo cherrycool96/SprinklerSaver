@@ -31,6 +31,7 @@ function init () {
 }
 
 function calculateTimeToNextWater () {
+	Util.date = new Date();
 	// timeToNextWatering is assuming that the watering is within 24 hours of the current time. We account for this assumption later
 	var timeToNextWatering = Util.MinsToMillis(schedule.timeToWater - Util.TimeToMins(Util.date.getHours(), Util.date.getMinutes()));
 	timeToNextWatering = (timeToNextWatering >= 0) ? timeToNextWatering : Util.TimeToMillis(24, 0) - timeToNextWatering;
@@ -61,6 +62,8 @@ function startWater () {
 				setTimeout(function () {
 					LCDcontroller.dim();
 				}, schedule.LCDtimeout);
+				Util.date = new Date();
+				analytics.addWatering(Util.date, schedule.durationOfWater);
 
 				setTimeout(startWater, calculateTimeToNextWater());
 			}

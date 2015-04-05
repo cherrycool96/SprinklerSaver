@@ -18,7 +18,6 @@ var app = require('express')();
 var server = require('http').Server(app);
 
 app.get("/SprinklersOn", function (req, res) {
-	console.log("turning on");
 	// TODO: comment the next line
 	startWatering();
 	forceWatering = true;
@@ -26,7 +25,6 @@ app.get("/SprinklersOn", function (req, res) {
 });
 
 app.get("/SprinklersOff", function (req, res) {
-	console.log("turning off");
 	stopWatering();
 	forceWatering = false;
 	res.send("Turning off");

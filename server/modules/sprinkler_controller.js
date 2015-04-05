@@ -3,9 +3,11 @@ module.exports = {
 		state = s;
 		if (state) {
 			// turn the LED on for now
+			console.log("turning on");
 			sprinklers.write(1);
 		} else {
 			// turn the LED off for now
+			console.log("turning off");
 			sprinklers.write(0);
 		}
 	},
