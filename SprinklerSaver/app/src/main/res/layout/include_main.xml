@@ -58,11 +58,11 @@
 
     <ImageView
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="fill_parent"
         android:id="@+id/icon"
-        android:src="@drawable/icon"
+        android:src="@drawable/off"
         android:layout_centerHorizontal="true"
         android:layout_above="@+id/info"
-        android:layout_alignParentTop="true"/>
+        android:layout_alignParentTop="true" />
 
 </RelativeLayout>

@@ -4,7 +4,7 @@ android {
     compileSdkVersion 22
     buildToolsVersion '22.0.1'
     defaultConfig {
-        applicationId "com.example.michelletjoa.sprinklersaver"
+        applicationId "com.michelletjoa.sprinklersaver"
         minSdkVersion 16
         targetSdkVersion 21
         versionCode 1

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SprinklerSaver</string>
+    <string name="app_name">Sprinkle</string>
 
     <string name="drawer_item_home">Home</string>
     <string name="drawer_item_analytics">Data</string>
