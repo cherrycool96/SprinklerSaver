@@ -5,7 +5,7 @@ var weather = require("./modules/weather_getter.js");
 var logic = require("./modules/logic.js");
 var schedule = require("./modules/schedule.js");
 var analytics = require("./modules/analytics.js");
-var API = require("./modules/API.js").init(startWater, stopWater);
+var API = require("./modules/API.js").init(startWater, stopWater, sprinklers.getState, analytics.getWateringDataAsGraph);
 var Util = require("./modules/utils.js");
 
 var systemLoop;

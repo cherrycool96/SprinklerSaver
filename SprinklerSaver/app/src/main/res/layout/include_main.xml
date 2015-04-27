@@ -22,8 +22,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Sprinkler On/Off"
-            android:id="@+id/txtSprinklerStat"
+            android:text="Disconnected"
+            android:id="@+id/txtConnected"
             android:textSize="30dp"
             android:textColor="#ffffff"
             android:layout_above="@+id/switchOnOff"
@@ -34,8 +34,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Is it Connected?"
-            android:id="@+id/txtConnected"
+            android:text="Sprinklers are off"
+            android:id="@+id/txtSprinklerStat"
             android:textSize="40dp"
             android:textColor="#ffffff"
             android:layout_above="@+id/txtSprinklerStat"
@@ -44,7 +44,7 @@
         <Switch
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Turn On/Off Sprinkler"
+            android:text="Turn On/Off Sprinklers"
             android:id="@+id/switchOnOff"
             android:checked="false"
             android:clickable="true"
@@ -63,6 +63,7 @@
         android:src="@drawable/off"
         android:layout_centerHorizontal="true"
         android:layout_above="@+id/info"
-        android:layout_alignParentTop="true" />
+        android:layout_alignParentTop="true"
+        android:padding="15dp" />
 
 </RelativeLayout>
